@@ -242,6 +242,7 @@ p{
 
 .projetos-section{
     background-color: #EFEDE9;
+    padding: 50px;
 }
 
 #info{
@@ -273,7 +274,7 @@ p{
 
 
 .php:hover{
-    transition: color 0.3s ease;
+  transition: color 0.3s ease;
   color:rgb(132, 132, 223) !important; 
 }
 
@@ -481,8 +482,9 @@ p{
     --accent-color: #BFA37A;
 }
 
- /* Tema escuro */
 
+
+ /* Tema escuro */
 /* Adiciona uma transição suave a todas as propriedades alteráveis */
 [data-theme="dark"] nav,
 [data-theme="dark"] .letter-tech,
