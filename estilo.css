@@ -214,11 +214,37 @@ footer .socials i{
     font-size: 40px;
     cursor: pointer;
     transition: color 0.3s ease;
+    color: #223B7A; /* cor padrão modo claro */
+}
+
+footer .socials i.bxl-linkedin-square {
+    color: #0077b5;
+}
+footer .socials i.bxl-github {
+    color: #222;
+}
+
+footer .socials i:hover {
+    color: #BFA37A;
+}
+
+[data-theme="dark"] footer .socials i {
+    color: #E6E7E9;
+}
+[data-theme="dark"] footer .socials i.bxl-linkedin-square {
+    color: #22c55e;
+}
+[data-theme="dark"] footer .socials i.bxl-github {
+    color: #BFA37A;
+}
+[data-theme="dark"] footer .socials i:hover {
+    color: #0077b5;
 }
 
 footer .socials i:hover{
-    color: #223B7A;
+    color: #e6e7e9b9;
 }
+
 
 footer p{
     font-size: 14px;
@@ -419,6 +445,9 @@ p{
     margin-bottom: 20px;
     font-weight: bold;
 }
+    [data-theme="dark"] .content h2 {
+        color: #E6E7E9 ; 
+    }
 
 .content p {
     margin-bottom: 20px;
@@ -617,7 +646,7 @@ p{
 /* Hover animado modo claro */
 .tech-card:hover {
     transform: translateY(-6px) scale(1.05);
-    background: #22c55e;
+    background: #22c5bd;
     color: #0f172a;
     box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
     border: 1px solid #22c55e;
