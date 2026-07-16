@@ -1,12 +1,20 @@
-const toggleSwitch = document.querySelector('.input');
-const currentTheme = localStorage.getItem('theme') ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+(function () {
+  const root = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initial = stored || (prefersDark ? 'dark' : 'light');
 
-document.documentElement.setAttribute('data-theme', currentTheme);
-toggleSwitch.checked = currentTheme === 'dark';
+  applyTheme(initial);
 
-toggleSwitch.addEventListener('change', function () {
-    const theme = this.checked ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-});
+  toggle.addEventListener('click', function () {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  }
+})();
